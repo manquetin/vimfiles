@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/minibufexpl"]
+	path = home/.vim/bundle/minibufexpl
+	url = https://github.com/weynhamz/vim-plugin-minibufexpl.git

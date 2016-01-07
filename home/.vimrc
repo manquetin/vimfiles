@@ -11,6 +11,10 @@
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Map leader key
+let mapleader = ","
+let g:mapleader = ","
+
 " Plugin management
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -29,9 +33,10 @@ set history=1000
 " Automatically load files when changed from outside
 set autoread
 
-" Map leader key
-let mapleader = ","
-let g:mapleader = ","
+
+" Map <C-Tab>
+map <Esc>[27;5;9~ <C-Tab>
+map <Esc>[27;6;9~ <C-S-Tab>
 
 " Source the vimrc file after saving it
 autocmd bufwritepost .vimrc source ~/.vimrc
@@ -196,9 +201,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-" Close buffers
-map <leader>ba :1,1000 bd<cr>
 
 " Mappings for tabs
 map <leader>tn :tabnew<cr>
@@ -446,3 +448,23 @@ function! s:Median(nums)
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
 endfunction
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MiniBufExpl
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:miniBufExplorerAutoStart = 1
+let g:miniBufExplBuffersNeeded = 2
+let g:miniBufExplHideWhenDiff = 1
+let g:miniBufExplCycleArround = 1
+
+" Close buffers except the current one
+map <silent> <leader>ba :%bd <bar> e# <cr>
+
+" Moving around
+map <leader>h <leader>j
+map <leader>l <leader>k
+noremap <leader>j :MBEbp<cr>
+noremap <leader>k :MBEbn<cr>
+noremap <C-Tab> :MBEbf<cr>
+noremap <C-S-Tab> :MBEbp<cr>
