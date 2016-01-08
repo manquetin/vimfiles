@@ -8,16 +8,23 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin management
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'altercation/vim-colors-solarized'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Map leader key
 let mapleader = ","
 let g:mapleader = ","
-
-" Plugin management
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
 
 " Filetype plugins
 filetype plugin on
@@ -109,7 +116,11 @@ set tm=500
 " Enable syntax highlighting
 syntax enable
 
-colorscheme solarized
+try
+    colorscheme solarized
+catch
+endtry
+
 set t_Co=256
 
 if has("gui_running")
@@ -448,23 +459,3 @@ function! s:Median(nums)
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MiniBufExpl
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:miniBufExplorerAutoStart = 1
-let g:miniBufExplBuffersNeeded = 2
-let g:miniBufExplHideWhenDiff = 1
-let g:miniBufExplCycleArround = 1
-
-" Close buffers except the current one
-map <silent> <leader>ba :%bd <bar> e# <cr>
-
-" Moving around
-map <leader>h <leader>j
-map <leader>l <leader>k
-noremap <leader>j :MBEbp<cr>
-noremap <leader>k :MBEbn<cr>
-noremap <C-Tab> :MBEbf<cr>
-noremap <C-S-Tab> :MBEbp<cr>
