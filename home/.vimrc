@@ -24,6 +24,10 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " Hygiene
 Plug 'bronson/vim-trailing-whitespace'
 
+" VCS
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
