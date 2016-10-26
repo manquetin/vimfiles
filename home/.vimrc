@@ -221,6 +221,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Move between tabs easier
+map <C-Tab> :bn<cr>
+map <C-S-Tab> :bp<cr>
+
 " Mappings for tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
