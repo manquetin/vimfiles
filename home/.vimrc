@@ -172,16 +172,6 @@ set noswapfile
 " Text, tab and indent
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use space instead of tabs
-set expandtab
-
-" Be smart when using tabs
-set smarttab
-
-" 1 tab = 4 spaces
-set shiftwidth=4
-set tabstop=4
-
 " Line break
 set lbr
 set tw=80
@@ -189,7 +179,6 @@ set wrap
 
 " Indentation
 set ai
-set si
 
 " Show special chars
 set list
